@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block pages %}
+<div class="selection">
+    <label for="category">商品類型：&nbsp;</label>
+    <select id="category" name="category">
+        <option value="1">書籍</option>
+        <option value="2">CD</option>
+        <option value="3">DVD</option>
+    </select>
+
+    <label for="price">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;售價：&nbsp;</label>
+    <input type="text" placeholder="金額" style="width: 60px;"><span>&nbsp;&nbsp;至&nbsp;</span>
+    <input type="text" placeholder="金額" style="width: 60px;"><span>&nbsp;&nbsp;元之間</span>
+
+    <label for="discount">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;折數：&nbsp;</label>
+    <select id="discount" name="discount" style="width: 60px;">
+        <option value="1">1折</option>
+        <option value="2">2折</option>
+        <option value="3">3折</option>
+        <option value="4">4折</option>
+        <option value="5">5折</option>
+        <option value="6">6折</option>
+        <option value="7">7折</option>
+        <option value="8">8折</option>
+        <option value="9">9折</option>
+    </select>
+    <span>&nbsp;至&nbsp;</span>
+    <select id="discount" name="discount" style="width: 60px;">
+        <option value="1">1折</option>
+        <option value="2">2折</option>
+        <option value="3">3折</option>
+        <option value="4">4折</option>
+        <option value="5">5折</option>
+        <option value="6">6折</option>
+        <option value="7">7折</option>
+        <option value="8">8折</option>
+        <option value="9">9折</option>
+    </select>
+    <span>&nbsp;之間</span>
+
+    <div style="float: right; padding-right: 1%;">
+        <!-- <button class="btn btn-xs" type="button"
+            style="padding: 5px;background-color:white; border: 1px solid;">取消</button> -->
+        <button class="btn btn-xs" type="button"
+            style="padding: 5px; background-color: #db7329ed; color: white;">確認</button>
+    </div>
+</div>
+
+<div class="row row-cols-1 row-cols-md-4" style="margin: 2%;">
+    <div class="col mb-4">
+
+        {% for data in goods_list %}
+        <div class="card" style="cursor:pointer;" onclick="location.href='{{ data.get_url }}';">
+            <div class="card-body" style="margin-left: 5%; margin-top: 2%;">
+                <h5 class="card-title">{{ data.good_name}}</h5><br>
+                <p class="card-author">${{ data.good_author }}</p><br>
+                <p class="card-price">{{ data.good_price }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

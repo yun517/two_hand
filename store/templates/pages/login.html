@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block pages %}
+    <div class="login_block">
+        <div class="container">
+            <h3 style="text-align: center;">會員登入</h3>
+            <form method="post" action="login.js" class="login_form">
+                <input type="text" class="enter" placeholder="請輸入帳號" style="margin-top: 20px;"><br>
+                <input type="password" class="enter" placeholder="請輸入密碼" style="margin-top: 20px;">
+                <!-- <div id="login_control" > -->
+                    <input class="btn btn-primary" type="button" value="登入" onclick="login();" />
+                <!-- </div> -->
+            </form>
+        </div>
+    </div>
+{% endblock %}
