@@ -24,10 +24,17 @@
         </div>
 
         <div class="member" style="float: right; margin-top: -40px; margin-right: 5%;">
-            <a class="head-link" href="login.html">登入</a>
-            <a class="head-link" href="" style="padding-left: 10px;">會員中心</a>
-            <img src="cart.png" style="padding-left: 10px; padding-bottom: 5px;">
+            <a class="head-link" href="{% url 'member_info' %}" style="padding-left: 10px;">會員中心</a>
+            <img src="/static/cart.png" style="padding-left: 10px; padding-bottom: 5px;">
             <a class="head-link" href="">購物車</a>
+
+            {% if user.is_authenticated %}
+
+                <a class="head-link" href="{% url "logout" %}" style="padding-left: 10px;">登出</a>
+            {% else %}
+                <a class="head-link" href="{% url 'login' %}" style="padding-left: 10px;">登入</a>
+                <a class="head-link" href="{% url 'register' %}" style="padding-left: 10px;">註冊</a>
+            {% endif %}
         </div>
     </div>
 
@@ -65,6 +72,9 @@
         {% endblock %}
 
         {% block member_info %}
+        {% endblock %}
+
+        {% block login %}
         {% endblock %}
     </div>
 

@@ -8,20 +8,17 @@
         
         <form method="POST" class="input_form">
             {% csrf_token %}
-            <label for="exampleInputName">姓名： </label>
-                <input type="name" class="form-control" id="exampleInputName" placeholder="請輸入姓名">
-
-                <label for="exampleInputEmail1">帳號： </label>
+                <label for="exampleInputUserName">帳號： </label>
                 <input type="text" class="form-control" id="exampleInputUserName" aria-describedby="emailHelp"
                     name="username" placeholder="請輸入帳號">
 
-                <label for="exampleInputBOD">電子信箱： </label>
+                <label for="exampleInputEmail1">電子信箱： </label>
                 <input type="text" class="form-control" id="exampleInputEmail1"
                     name="email" placeholder="請輸入E-mail">
 
                 <label for="exampleInputBOD">生日： </label>
-                <input type="text" class="form-control" id="exampleInputBOD"
-                    name="birth" placeholder="yyyy-mm-dd">
+                <input type="date" class="form-control" id="exampleInputBOD"
+                    name="birth" placeholder="請選擇生日">
 
                 <label for="exampleInputPassword1">密碼： </label>
                 <input type="password" class="form-control" id="exampleInputPassword1" name="password1"
