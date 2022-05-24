@@ -11,7 +11,7 @@
 
     <title>group12</title>
 
-    <link rel="stylesheet" href="/static/all.css">
+    <link rel="stylesheet" href="/static/member.css">
 </head>
 
 <body>
@@ -24,17 +24,10 @@
         </div>
 
         <div class="member" style="float: right; margin-top: -40px; margin-right: 5%;">
-            <a class="head-link" href="{% url 'member_info' %}" style="padding-left: 10px;">會員中心</a>
-            <img src="/static/cart.png" style="padding-left: 10px; padding-bottom: 5px;">
+            <a class="head-link" href="login.html">登入</a>
+            <a class="head-link" href="" style="padding-left: 10px;">會員中心</a>
+            <img src="cart.png" style="padding-left: 10px; padding-bottom: 5px;">
             <a class="head-link" href="">購物車</a>
-
-            {% if user.is_authenticated %}
-
-                <a class="head-link" href="{% url "logout" %}" style="padding-left: 10px;">登出</a>
-            {% else %}
-                <a class="head-link" href="{% url 'login' %}" style="padding-left: 10px;">登入</a>
-                <a class="head-link" href="{% url 'register' %}" style="padding-left: 10px;">註冊</a>
-            {% endif %}
         </div>
     </div>
 
@@ -42,7 +35,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/">首頁</a>
+                    <a class="nav-link" href="">首頁</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="">書籍</a>
@@ -54,22 +47,26 @@
                     <a class="nav-link" href="">DVD</a>
                 </li>
             </ul>
-            <ul class="navbar-nav navbar-right" style="margin-right: 2%;">
-                <li class="nav-item">
-                    <a class="nav-link" href="">我要賣</a>
-                </li>
-            </ul>
         </div>
     </nav>
 
-    {% block pages %}
-    {% endblock %}
+    <div class="headline row" id="head_row">
+        <div class="col-12 col-md-2">
+            <div class="list-group">
+                <a id="mem_info" class="list-group-item list-group-item-action active" data-toggle="list"
+                    href="{% url 'member_info' %}">會員資料</a>
+                <a id="mem_cart" class="list-group-item list-group-item-action " data-toggle="list" href="#">購物車</a>
+                <a id="mem_list" class="list-group-item list-group-item-action " data-toggle="list" href="#"
+                    >收藏清單</a>
+            </div>
+        </div>
 
-    {% block cart %}
-    {% endblock %}
+        {% block pages %}
+        {% endblock %}
 
-    {% block saved_list %}
-    {% endblock %}
+        {% block member_info %}
+        {% endblock %}
+    </div>
 
     <div class="wrapper">
         <footer class="footer" id="footer" style="color: white">
@@ -83,6 +80,7 @@
             </div>
         </footer>
     </div>
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->

@@ -10,93 +10,8 @@
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
     <title>group12 我賣你買</title>
-    <style>
-        html,
-        body {
-            height: 100%;
-            margin: 0;
-            scroll-behavior: smooth;
-        }
 
-        body {
-            /* display: flex; */
-            flex-direction: column;
-        }
-
-        .container {
-            display: inline;
-        }
-
-        .wrapper {
-            flex-grow: 1;
-        }
-
-        .footer {
-            background-color: #db7329ed;
-        }
-
-        .navbar {
-            background-color: #db7329ed;
-            height: 50px;
-        }
-
-        .nav-link {
-            color: white;
-        }
-
-        .nav-link:hover {
-            color: brown;
-        }
-
-        #buttons {
-            padding-top: 50px;
-            text-align: center;
-        }
-
-        .search {
-            display: inline-block;
-        }
-
-        .search-btn {
-            background-color: #db7329ed;
-            border: 0;
-            color: white;
-        }
-
-        .head-link {
-            color: black;
-        }
-
-        .head-link:hover {
-            color: #db7329ed;
-        }
-
-        .side-menu {
-            width: 150px;
-            margin-left: 3%;
-            margin-top: 1%;
-            box-sizing: border-box;
-            background: rgb(255, 255, 255);
-            display: flex;
-            flex-direction: column;
-            border: 2px solid;
-            border-color: yellow;
-        }
-
-        nav a {
-            display: block;
-            padding: 10px;
-            color: black;
-            /* text-decoration: none; */
-            position: relative;
-        }
-
-        h5 {
-            background-color: yellow;
-            /* height: 40px; */
-            padding: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="/store/templates/static/member.css">
 </head>
 
 <body>
@@ -135,11 +50,22 @@
         </div>
     </nav>
 
-    <div class="container">
-        <ul>
-            <li>會員姓名：</li>
-            <li>電子郵件：</li>
-        </ul>
+    <div class="headline row" id="head_row">
+        <div class="col-12 col-md-2">
+            <div class="list-group">
+                <a id="mem_info" class="list-group-item list-group-item-action active" data-toggle="list"
+                    href="{% url 'member_info' %}">會員資料</a>
+                <a id="mem_cart" class="list-group-item list-group-item-action " data-toggle="list" href="#">購物車</a>
+                <a id="mem_list" class="list-group-item list-group-item-action " data-toggle="list" href="#"
+                    >收藏清單</a>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-10" style="padding-left: 5%;">
+            <p>會員姓名：{{ user.username }}</p>
+            <p>電子郵件：{{ user.email }}</p>
+            <p>生日：{{ user.birth}}</p>
+        </div>
     </div>
 
     <div class="wrapper">
@@ -154,6 +80,7 @@
             </div>
         </footer>
     </div>
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->

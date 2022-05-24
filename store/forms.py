@@ -3,9 +3,19 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
 class SignupForm(UserCreationForm):
+    birth = forms.CharField(
+        label = "姓名", 
+        widget = forms.TextInput(attrs={"class" : "form-control"})
+    )
+
     username = forms.CharField(
         label = "帳號",
         widget = forms.TextInput(attrs={"class": "form-control"})
+    )
+
+    birth = forms.DateField(
+        label = "生日",
+        widget = forms.TextInput(attrs={"class" : "form-control"})
     )
 
     password1 = forms.CharField(

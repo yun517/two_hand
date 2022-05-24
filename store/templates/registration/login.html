@@ -1,0 +1,21 @@
+{% extends "reg_base.html" %}
+
+{% block login %}
+<div class="block">
+    <div class="container">
+        <h3 style="text-align: center;">會員登入</h3>
+
+        <form method="post" class="input_form">
+            {% csrf_token %}
+            <label for="exampleInputEmail1">帳號： </label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="username"
+                placeholder="請輸入E-mail">
+
+            <label for="exampleInputPassword1">密碼： </label>
+            <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="請輸入密碼">
+            
+            <button type="submit" class="btn btn-primary">登入</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,8 +1,10 @@
-{% extends "base.html" %}
+{% extends "member_base.html" %}
 
 {% block pages %}
-    <div class="container">
-        <p>hello</p>
+    <div class="col-12 col-md-10" style="padding-left: 5%;">
+        <p>會員姓名：{{ user.username }}</p>
+        <p>電子郵件：{{ user.email }}</p>
+        <p>生日：{{ user.birth}}</p>
     </div>
 
 {% endblock %}

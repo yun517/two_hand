@@ -9,60 +9,40 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
-    <title>group12 我賣你買</title>
-    <style>
-        .login_block {
-            margin: 15%;
-        }
+    <title>group12</title>
 
-        .container {
-            
-            border: 1px;
-            border-style: solid;
-            border-color: gray;
-            width: 530px;
-            height: 300px;
-            padding-top: 40px;
-        }
-
-        .login_form {
-            padding-left: 90px;
-            padding-bottom: 50px;
-        }
-
-        input.enter {
-            border: none;
-            border: 1px solid;
-            border-radius: 25px;
-            width: 300px;
-            padding-left: 15px;
-        }
-
-        .btn {
-            margin-top:20px;
-            border-radius: 25px;
-            width: 300px;
-            height: 40px;
-            font-size: 15px;
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="/store/templates/static/log.css">
 </head>
 
 <body>
-    <div class="login_block">
+    <div class="block">
         <div class="container">
-            <h3 style="text-align: center;">會員登入</h3>
-            <form method="post" action="login.js" class="login_form">
-                <input type="text" class="enter" placeholder="請輸入帳號" style="margin-top: 20px;"><br>
-                <input type="password" class="enter" placeholder="請輸入密碼" style="margin-top: 20px;">
-                <!-- <div id="login_control" > -->
-                    <input class="btn btn-primary" type="button" value="登入" onclick="login();" />
-                <!-- </div> -->
+            <h3 style="text-align: center;">註冊會員</h3>
+            <form method="post" class="input_form">
+                
+                <label for="exampleInputEmail1">姓名： </label>
+                <input type="name" class="form-control" id="exampleInputName" placeholder="請輸入姓名">
+
+                <label for="exampleInputEmail1">帳號： </label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    name="username" placeholder="請輸入E-mail">
+
+                <label for="exampleInputEmail1">生日： </label>
+                <input type="text" class="form-control" id="exampleInputBOD"
+                    name="birth" placeholder="yyyy-mm-dd">
+
+                <label for="exampleInputPassword1">密碼： </label>
+                <input type="password" class="form-control" id="exampleInputPassword1" name="password1"
+                    placeholder="請輸入密碼">
+
+                <label for="exampleInputPassword1">密碼確認： </label>
+                <input type="password" class="form-control" id="exampleInputPassword1" name="password2"
+                    placeholder="請再一次輸入密碼">
+
+                <button type="submit" class="btn btn-primary" style="width: 350px;">註冊</button>
             </form>
         </div>
     </div>
-
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
