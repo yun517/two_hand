@@ -2,17 +2,18 @@
 
 {% block login %}
 <div class="block">
-    <div class="container">
-        <h3 style="text-align: center;">會員登入</h3>
+    <div class="form-group">
+        <h3>會員登入</h3>
 
-        <form method="POSt" class="input_form">
+        <form method="post" class="input_form">
             {% csrf_token %}
-            <label for="exampleInputUserName">帳號： </label>
+            {{ form.as_p }}
+            <!-- <label for="exampleInputUserName">帳號： </label>
             <input type="text" class="form-control" id="exampleInputUsername" aria-describedby="emailHelp" name="username"
                 placeholder="請輸入帳號">
 
             <label for="exampleInputPassword1">密碼： </label>
-            <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="請輸入密碼">
+            <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="請輸入密碼"> -->
             
             <button type="submit" class="btn btn-primary">登入</button>
         </form>

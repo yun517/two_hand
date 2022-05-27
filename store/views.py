@@ -3,7 +3,6 @@ from django.views import generic
 from django.shortcuts import get_object_or_404, redirect, render
 from django.http import *
 from .forms import *
-from .models import Member
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
