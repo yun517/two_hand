@@ -7,6 +7,14 @@ urlpatterns = [
     path('register/', UserRegisterView.as_view(), name='register'),
     path('edit_profile/', UserEditView.as_view(), name='edit_profile'),
     # path('password/', auth_views.PasswordChangeView.as_view(template_name = 'registration/change-password.html')),s
-    path('password/', PasswordsChangeView.as_view(template_name = 'registration/change-password.html')),
-    path('password_success', views.password_success, name = 'password_success'),
+    path('password/', PasswordsChangeView.as_view(
+        template_name='registration/change-password.html'), name='password'),
+    path('password_success', views.password_success, name='password_success'),
+]
+
+urlpatterns += [
+    path('edit_profile/', UserEditView.as_view(), name='edit_profile'),
+    path('password/', PasswordsChangeView.as_view(
+        template_name='registration/change-password.html'), name='password'),
+    path('password_success', views.password_success, name='password_success'),
 ]

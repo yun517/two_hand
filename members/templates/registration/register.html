@@ -3,16 +3,16 @@
 {% block register %}
 
 <div class="block">
-    <div class="form-group" >
-        <h3>註冊會員</h3>    
+    <div class="form-group">
+        <h3>註冊會員</h3>
         <form method="post">
             {% csrf_token %}
-            {{ form.as_p }} 
+            {{form.as_p}}
             <button type="submit" class="btn btn-primary">註冊</button>
         </form>
     </div>
 
-    
+
 </div>
 
 {% endblock %}

@@ -4,17 +4,13 @@
 <div class="block">
     <div class="form-group">
         <h3>會員登入</h3>
-
-        <form method="post" class="input_form">
+        <form method="post">
             {% csrf_token %}
-            {{ form.as_p }}
-            <!-- <label for="exampleInputUserName">帳號： </label>
-            <input type="text" class="form-control" id="exampleInputUsername" aria-describedby="emailHelp" name="username"
-                placeholder="請輸入帳號">
-
-            <label for="exampleInputPassword1">密碼： </label>
-            <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="請輸入密碼"> -->
-            
+                <label for="exampleInputUserName">帳號： </label>
+                <input type="text" class="form-control" id="exampleInputUsername" aria-describedby="emailHelp"
+                    name="username" />
+                <label for="exampleInputPassword1">密碼： </label>
+                <input type="password" class="form-control" id="exampleInputPassword1" name="password"/>
             <button type="submit" class="btn btn-primary">登入</button>
         </form>
     </div>

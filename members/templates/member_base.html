@@ -11,11 +11,104 @@
 
     <title>group12</title>
 
-    <link rel="stylesheet" href="/members/templates/static/member.css">
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            /* display: flex; */
+            flex-direction: column;
+        }
+
+        .container-top {
+            display: inline;
+        }
+
+        .wrapper {
+            flex-grow: 1;
+        }
+
+        .footer {
+            background-color: #db7329ed;
+        }
+
+        .navbar {
+            background-color: #db7329ed;
+            height: 70px;
+            margin-top: 2%;
+        }
+
+        .nav-link {
+            color: white;
+        }
+
+        .nav-link:hover {
+            color: brown;
+        }
+
+        #buttons {
+            padding-top: 50px;
+            text-align: center;
+        }
+
+        .search {
+            display: inline-block;
+        }
+
+        .search-btn {
+            background-color: #db7329ed;
+            border: 0;
+            color: white;
+        }
+
+        .head-link {
+            color: black;
+        }
+
+        .head-link:hover {
+            color: #db7329ed;
+        }
+
+        .head-link {
+            color: black;
+        }
+
+        .head-link:hover {
+            color: #db7329ed;
+        }
+
+        #head_row {
+            margin: 3% 1%;
+        }
+
+        .list-group-item {
+            background-color: white;
+            border: 1px solid gray;
+            color: blue;
+        }
+
+        .list-group-item:hover {
+            background-color: rgb(193, 193, 193);
+        }
+
+        .container-content {
+            padding-top: 3%;
+            padding-left: 3%;
+        }
+
+        .btn {
+            font-size: 15px;
+        }
+    </style>
+
 </head>
 
 <body>
-    <div class="container" style="height:60px;">
+    <div class="container-top" style="height:60px;">
         <font size="6" color="brown" style="margin-left: 10%;">我賣你買</font>
 
         <div class="row" class="search" style="padding-left: 40%; margin-top: -40px;">
@@ -25,13 +118,13 @@
 
         <div class="member" style="float: right; margin-top: -40px; margin-right: 5%;">
             {% if user.is_authenticated %}
-                <a class="head-link" href="{% url 'edit_profile' %}" style="padding-left: 10px;">會員中心</a>
-                <img src="/static/cart.png" style="padding-left: 10px; padding-bottom: 5px;">
-                <a class="head-link" href="">購物車</a>
-                <a class="head-link" href="{% url "logout" %}" style="padding-left: 10px;">登出</a>
+            <a class="head-link" href="{% url 'edit_profile' %}" style="padding-left: 10px;">會員中心</a>
+            <img src="/static/cart.png" style="padding-left: 10px; padding-bottom: 5px;">
+            <a class="head-link" href="">購物車</a>
+            <a class="head-link" href="{% url 'logout' %}" style="padding-left: 10px;">登出</a>
             {% else %}
-                <a class="head-link" href="{% url 'login' %}" style="padding-left: 10px;">登入</a>
-                <a class="head-link" href="{% url 'register' %}" style="padding-left: 10px;">註冊</a>
+            <a class="head-link" href="{% url 'login' %}" style="padding-left: 10px;">登入</a>
+            <a class="head-link" href="{% url 'register' %}" style="padding-left: 10px;">註冊</a>
             {% endif %}
         </div>
     </div>
@@ -58,14 +151,13 @@
     <div class="headline row" id="head_row">
         <div class="col-12 col-md-2">
             <div class="list-group">
-                <a id="mem_info" class="list-group-item list-group-item-action active" data-toggle="list"
-                    href="{% url 'edit_profile' %}">修改會員資料</a>
-                <a id="mem_cart" class="list-group-item list-group-item-action " data-toggle="list" href="#">購物車</a>
-                <a id="mem_list" class="list-group-item list-group-item-action " data-toggle="list" href="#"
-                    >收藏清單</a>
+                <a id="mem_info" class="list-group-item list-group-item-action " 
+                    href="{% url 'edit_profile' %}" >修改會員資料</a>
+                <a id="mem_cart" class="list-group-item list-group-item-action "  href="{% url 'password' %}">修改密碼</a>
+                <a id="mem_cart" class="list-group-item list-group-item-action "  href="#">購物車</a>
+                <a id="mem_list" class="list-group-item list-group-item-action "  href="#">收藏清單</a>
             </div>
         </div>
-
         {% block pages %}
         {% endblock %}
 
